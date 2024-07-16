@@ -7,3 +7,6 @@ class HomePageView(TemplateView):
 
 class LogInRegistration(TemplateView):
     template_name = "mainapp/login_reg.html"
+
+class Registration(TemplateView):
+    template_name = "mainapp/registration.html"

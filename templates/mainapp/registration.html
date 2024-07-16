@@ -1,17 +1,16 @@
 {% load static %}
 
-<!DOCTYPE html>
+    <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HappyMind</title>
-     <link href="{% static 'mainapp/styles.css' %}" rel="stylesheet" />
-   
+    <title>User Registration Form</title>
+    <link href="{% static 'mainapp/registration.css' %}" rel="stylesheet" />
 </head>
 <body>
-<header>
-    <div class="navbar">
+
+   <div class="navbar">
         <div class="logo">
             <h1>HappyMind</h1>
             <p>Centre for Mental Wellbeing</p>
@@ -37,45 +36,45 @@
         </nav>
         <div class="auth-buttons">
             <button class="login"><a href="{% url 'login' %}">Login</a></button>
-            <button class="login"><a href="{% url 'register' %}">Register</a></button>
-
         </div>
     </div>
-</header>
-<main>
 
-    <section class="hero">
 
-        <div class="hero-text">
-            <h2>Affordable Mental Health Treatment Across Bangladesh</h2>
-        </div>
 
-        <div class="hero-image">
-            <img src="{% static 'mainapp/landing_main.png' %}" alt="Therapist on video call>
-        </div>
-    </section>
-
-    <!-- Review Section -->
-    <section class = "reviews">
-
-        <h2>What Our Clients Say</h2>
-        <div class="review">
-            <p>"HappyMind has changed my life. The therapists are compassionate and highly skilled."</p>
-            <h3>- Sarah K.</h3>
-        </div>
-        <div class="review">
-            <p>"The mood tracking feature is a game-changer. It helps me understand my patterns better."</p>
-            <h3>- John D.</h3>
-        </div>
-        <div class="review">
-            <p>"Affordable and accessible mental health services. Highly recommended."</p>
-            <h3>- Anita R.</h3>
-        </div>
-    </section>
-
-</main>
-
-<!-- Footer -->
+    <div class="container form-container">
+        <h2>User Registration </h2>
+        <form action="/submit_registration" method="post">
+            <div class="form-group">
+                <label for="first_name">First Name</label>
+                <input type="text" id="first_name" name="first_name" required>
+            </div>
+            <div class="form-group">
+                <label for="last_name">Last Name</label>
+                <input type="text" id="last_name" name="last_name" required>
+            </div>
+            <div class="form-group">
+                <label for="dob">Date of Birth</label>
+                <input type="date" id="dob" name="dob" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" name="phone" required>
+            </div>
+            <div class="form-group">
+                <label for="emergency_contact">Emergency Contact</label>
+                <input type="tel" id="emergency_contact" name="emergency_contact" required>
+            </div>
+            <div class="form-group">
+                <label for="address">Address</label>
+                <textarea id="address" name="address" rows="4" required></textarea>
+            </div>
+            <button type="submit">Register</button>
+        </form>
+    </div>
 <footer>
     <div class="footer-content">
         <div class="footer-section about">
@@ -101,5 +100,6 @@
         <p>&copy; 2024 HappyMind. All rights reserved.</p>
     </div>
 </footer>
+
 </body>
 </html>
