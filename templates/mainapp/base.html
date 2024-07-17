@@ -5,71 +5,68 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HappyMind</title>
-     <link href="{% static 'mainapp/styles.css' %}" rel="stylesheet" />
-   
+    <title>{% block title %}HappyMind{% endblock %}</title>
+    <link href="{% static 'mainapp/styles.css' %}" rel="stylesheet">
+    <!-- Additional styles or meta tags can be added here -->
 </head>
 <body>
-<header>
-    <div class="navbar">
-        <div class="logo">
-            <h1>HappyMind</h1>
-            <p>Centre for Mental Wellbeing</p>
-        </div>
-        <nav>
-            <ul>
-                <li><a href="about.html">About</a></li>
-                <li>
-                    <div class="dropdown">
-                        <button class="dropbtn">Specialist
-                            <i class="fa fa-caret-down"></i>
-                        </button>
-                        <div class="dropdown-content">
-                            <a href="psychiar.html">Psychiatrist</a>
-                            <a href="psy.html">Psychologist</a>
+    <header>
+        <div class="navbar-custom">
+            <div class="logo-custom">
+                <h1>HappyMind</h1>
+                <p>Centre for Mental Wellbeing</p>
+            </div>
+            <nav>
+                <ul class="nav-list-custom">
+                    <li><a href="#">About</a></li>
+                    {% comment %} {% url 'about' %} {% endcomment %}
+                    <li>
+                        <div class="dropdown-custom">
+                            <button class="dropbtn-custom">Specialist <i class="fa fa-caret-down"></i></button>
+                            <div class="dropdown-content-custom">
+                                <a href="#">Psychiatrist</a>
+                                <a href="#">Psychologist</a>
+                            </div>
                         </div>
-                    </div>
-                </li>
-                <li><a href="consultation/consultation.html">Consultation</a></li>
-                <li><a href="event.html">Join Nearby Events</a></li>
-                <li><a href="mood.html">Mood Tracking</a></li>
-            </ul>
-        </nav>
-    </div>
-</header>
-<main>
-    {% block content %}
+                    </li>
+                    <li><a href="#">Consultation</a></li>
+                    <li><a href="#">Join Nearby Events</a></li>
+                    <li><a href="#">Mood Tracking</a></li>
+                </ul>
+            </nav>
+        </div>
         
- {% endblock content %}
-</main>
-
-<!-- Footer -->
-<footer>
-    <div class="footer-content">
-        <div class="footer-section about">
-            <h3>About HappyMind</h3>
-            <p>HappyMind is dedicated to providing affordable and accessible mental health services across Bangladesh.</p>
+    <main>
+        {% block content %}
+        <!-- Content block will be overridden in child templates -->
+        {% endblock %}
+    </main>
+    <!-- Footer -->
+    <footer class="footer-custom">
+        <div class="footer-content-custom">
+            <div class="footer-section-custom about-custom">
+                <h3>About HappyMind</h3>
+                <p>HappyMind is dedicated to providing affordable and accessible mental health services across Bangladesh.</p>
+            </div>
+            <div class="footer-section-custom links-custom">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Consultation</a></li>
+                    <li><a href="#">Events</a></li>
+                    <li><a href="#">Mood Tracking</a></li>
+                </ul>
+            </div>
+            <div class="footer-section-custom contact-custom">
+                <h3>Contact Us</h3>
+                <p>Email: info@Happymind.com</p>
+                <p>Phone: +880 1234 567890</p>
+            </div>
         </div>
-        <div class="footer-section links">
-            <h3>Quick Links</h3>
-            <ul>
-                <li><a href="about.html">About</a></li>
-                <li><a href="/consultation/consultation.html">Consultation</a></li>
-                <li><a href="event.html">Events</a></li>
-                <li><a href="mood.html">Mood Tracking</a></li>
-            </ul>
+        <div class="footer-bottom-custom">
+            <p>&copy; 2024 HappyMind. All rights reserved.</p>
         </div>
-        <div class="footer-section contact">
-            <h3>Contact Us</h3>
-            <p>Email: info@Happymind.com</p>
-            <p>Phone: +880 1234 567890</p>
-        </div>
-    </div>
-    <div class="footer-bottom">
-        <p>&copy; 2024 HappyMind. All rights reserved.</p>
-    </div>
-</footer>
-
+    </footer>
+    
 </body>
-
 </html>

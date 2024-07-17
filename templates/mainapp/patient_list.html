@@ -1,0 +1,35 @@
+{% extends 'mainapp/base.html' %}
+
+{% block title %}Patient List - HappyMind{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h1 style="text-align:center; padding-top: 10px;">Patient List</h1>
+    <div class="table-container" style="max-width: 800px; margin: 20px auto; padding: 20px; background-color: #fff; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); border-radius: 8px;">
+        <table class="patient-table" style="width: 100%; border-collapse: collapse;">
+            <thead>
+                <tr>
+                    <th style="background-color: #f0f8f7; border: 1px solid #ddd; padding: 8px; text-align: left;">First Name</th>
+                    <th style="background-color: #f0f8f7; border: 1px solid #ddd; padding: 8px; text-align: left;">Last Name</th>
+                    <th style="background-color: #f0f8f7; border: 1px solid #ddd; padding: 8px; text-align: left;">Phone Number</th>
+                    <th style="background-color: #f0f8f7; border: 1px solid #ddd; padding: 8px; text-align: left;">Email</th>
+                    <th style="background-color: #f0f8f7; border: 1px solid #ddd; padding: 8px; text-align: left;">Emergency Contact</th>
+                    <th style="background-color: #f0f8f7; border: 1px solid #ddd; padding: 8px; text-align: left;">Address</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for patient in patients %}
+                <tr>
+                    <td style="border: 1px solid #ddd; padding: 8px; text-align: left;">{{ patient.first_name }}</td>
+                    <td style="border: 1px solid #ddd; padding: 8px; text-align: left;">{{ patient.last_name }}</td>
+                    <td style="border: 1px solid #ddd; padding: 8px; text-align: left;">{{ patient.phone_number }}</td>
+                    <td style="border: 1px solid #ddd; padding: 8px; text-align: left;">{{ patient.email }}</td>
+                    <td style="border: 1px solid #ddd; padding: 8px; text-align: left;">{{ patient.emergency_contact }}</td>
+                    <td style="border: 1px solid #ddd; padding: 8px; text-align: left;">{{ patient.address }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock %}
